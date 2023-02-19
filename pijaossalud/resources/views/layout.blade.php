@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-md-4">
                     <h4>Horario</h4>
-                    <p>lunes a viernes <br> 8:00 am - 5:00 pm</p>
+                    <p>lunes a viernes <br> 7:00 am - 5:00 pm</p>
                 </div>
                 <div class="col-md-4">
                     <h4>Contacto</h4>

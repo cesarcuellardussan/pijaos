@@ -25,7 +25,6 @@ class CreateGestionHospitalariaTable extends Migration
             $table->foreign('no_doc_paciente')->references('no_documento')->on('pacientes');
             $table->foreign('cod_hospital')->references('cod_hospital')->on('hospitales');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

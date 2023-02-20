@@ -173,7 +173,7 @@ class HospitalController extends Controller
                     'icon'  => 'warning'
                 ], 200);
             }else{
-                $Hospital = Hospital::where('cod_hospital', "'".$cod_hospital."'")->first();
+                $Hospital = Hospital::where('cod_hospital', $cod_hospital)->first();
                 if ($Hospital->gestionHospitalarias()->exists() && $request->cod_hospital != $cod_hospital) {
                     return $this->successResponse([
                         'title' => 'Validacion!',

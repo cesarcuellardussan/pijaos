@@ -196,7 +196,7 @@ class HospitalController extends Controller
         } catch (\Throwable $th) {
             return $this->successResponse([
                 'title' => 'Error!',
-                'text'  => $th->getMessage(),
+                'text'  => "request->cod_hospital -> ".gettype($request->cod_hospital)."   ,cod_hospital -> ".gettype($cod_hospital)."-----".$th->getMessage(),
                 'icon'  => 'error'
             ], 200);
             // return $this->errorResponse('Ocurrio un error al intentar crear el recurso. Detalle: ' . $th->getMessage(), 500);

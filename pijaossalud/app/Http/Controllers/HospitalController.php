@@ -194,7 +194,7 @@ class HospitalController extends Controller
                 }
             }
         } catch (\Throwable $th) {
-            ($request->cod_hospital != $cod_hospital)? $oli = "true" : $oli = "false";
+            ($request->cod_hospital !== $cod_hospital)? $oli = "true" : $oli = "false";
             return $this->successResponse([
                 'title' => 'Error!',
                 'text'  => $oli." request->cod_hospital -> ".$request->cod_hospital." ".gettype($request->cod_hospital)."   ,cod_hospital -> ".$cod_hospital." ".gettype($cod_hospital)."-----".$th->getMessage(),

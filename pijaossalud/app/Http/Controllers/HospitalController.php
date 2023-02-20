@@ -23,7 +23,7 @@ class HospitalController extends Controller
             $data = array();
             foreach ($hospitales as $key => $hospital) {
                 $acciones = '<button class="btn btn-sm btn-warning shadow" onclick="editHospital(\''.$hospital->cod_hospital.'\')"><i class="fas fa-edit"></i> Editar</button>
-                            <button class="btn btn-sm btn-danger shadow" onclick="deleteHospital('.$hospital->cod_hospital.')"><i class="fas fa-trash-alt"></i> Eliminar</button>';
+                            <button class="btn btn-sm btn-danger shadow" onclick="deleteHospital(\''.$hospital->cod_hospital.'\')"><i class="fas fa-trash-alt"></i> Eliminar</button>';
                 $data[] = [
                     'fec_creacion' => $hospital->created_at->format('Y-m-d H:i:s'),
                     'cod_hospital' => $hospital->cod_hospital,

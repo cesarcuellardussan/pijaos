@@ -40,7 +40,7 @@ class Hospital extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function gestionHospitalarias()
+    public function gestion_hospitalarias()
     {
         return $this->hasMany(GestionHospitalaria::class, 'cod_hospital', 'cod_hospital');
     }

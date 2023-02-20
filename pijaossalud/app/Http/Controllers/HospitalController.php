@@ -213,7 +213,7 @@ class HospitalController extends Controller
     {
         try {
             $Hospital = Hospital::where('cod_hospital', $cod_hospital)->first();
-            if ($Hospital->gestionHospitalarias()->exists()) {
+            if ($Hospital->gestion_hospitalarias()->exists()) {
                 return $this->successResponse([
                     'title' => 'Validacion!',
                     'text'  => 'No se puede eliminar el hospital porque tiene registros en GESTIÓN HOSPITALARIA',

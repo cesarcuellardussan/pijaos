@@ -162,7 +162,7 @@ class PacienteController extends Controller
             }else{
 
                 $Paciente = Paciente::where('no_documento', $no_documento)->first();
-                if ($Paciente->gestionHospitalarias()->exists() && $request->no_documento != $no_documento) {
+                if ($Paciente->gestionHospitalarias()->exists() && $request->no_documento !== $no_documento) {
                     return $this->successResponse([
                         'title' => 'Validacion!',
                         'text'  => 'No se puede actualizar el documento del paciente porque tiene registros en GESTIÓN HOSPITALARIA',

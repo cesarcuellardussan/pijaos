@@ -174,7 +174,7 @@ class HospitalController extends Controller
                 ], 200);
             }else{
                 $Hospital = Hospital::where('cod_hospital', $cod_hospital)->first();
-                if ($Hospital->gestionHospitalarias()->exists() && $request->cod_hospital != $cod_hospital) {
+                if ($Hospital->gestionHospitalarias()->exists() && $request->cod_hospital !== $cod_hospital) {
                     return $this->successResponse([
                         'title' => 'Validacion!',
                         'text'  => 'No se puede actualizar el hospital porque tiene registros en GESTIÓN HOSPITALARIA',
@@ -194,10 +194,9 @@ class HospitalController extends Controller
                 }
             }
         } catch (\Throwable $th) {
-            ($request->cod_hospital !== $cod_hospital)? $oli = "true" : $oli = "false";
             return $this->successResponse([
                 'title' => 'Error!',
-                'text'  => $oli." request->cod_hospital -> ".$request->cod_hospital." ".gettype($request->cod_hospital)."   ,cod_hospital -> ".$cod_hospital." ".gettype($cod_hospital)."-----".$th->getMessage(),
+                'text'  => $th->getMessage(),
                 'icon'  => 'error'
             ], 200);
             // return $this->errorResponse('Ocurrio un error al intentar crear el recurso. Detalle: ' . $th->getMessage(), 500);

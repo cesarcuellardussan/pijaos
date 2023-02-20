@@ -46,6 +46,7 @@ function storeHospital(){
 }
 
 function editHospital(cod_hospital){
+    console.log(cod_hospital);
     fetch('/hospitales/'+cod_hospital+'/edit', {
         method: 'GET',
         headers: {
@@ -76,7 +77,6 @@ function updateHospital(element){
     let nombre_hospital_edit = $("#nombre_hospital_edit").val();
     let nombre_hospital      = $(element).data('nombre-hospital');
     let cod_hospital         = $(element).data('cod-hospital');
-    console.log(cod_hospital);
     fetch('/hospitales/'+cod_hospital, {
         method: 'PUT',
         body: JSON.stringify({

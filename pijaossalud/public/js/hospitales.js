@@ -46,7 +46,6 @@ function storeHospital(){
 }
 
 function editHospital(cod_hospital){
-    console.log(cod_hospital);
     fetch('/hospitales/'+cod_hospital+'/edit', {
         method: 'GET',
         headers: {
@@ -108,7 +107,7 @@ function updateHospital(element){
 }
 
 function deleteHospital(cod_hospital){
-
+    console.log(cod_hospital);
     Swal.fire({
         title: '¿Está seguro que desea eliminar el hospital?',
         text: "No podrás revertir esto!",
